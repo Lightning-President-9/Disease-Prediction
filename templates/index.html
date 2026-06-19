@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>
+         Disease Prediction Report
+      </title>
+      <link
+         rel="icon"
+         href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🏥</text></svg>'
+         >
+      <meta name="viewport"
+         content="width=device-width, initial-scale=1.0">
+      <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+      <link rel="stylesheet"
+         href="{{ url_for('static', filename='style.css') }}">
+   </head>
+   <body>
+      <header class="hospital-header">
+         <div class="logo">
+            🏥
+         </div>
+         <div>
+            <h1>
+               Disease Prediction Report
+            </h1>
+            <p>
+               AI Assisted Disease Prediction System
+            </p>
+         </div>
+      </header>
+      <section class="patient-card">
+         <h2>
+            Patient Symptom Entry
+         </h2>
+         <div class="input-group">
+            <label>
+            Enter Symptoms
+            </label>
+            <input
+               id="symptomInput"
+               type="text"
+               placeholder="Search symptoms..."
+               oninput="filterSymptoms()"
+               onkeydown="handleKeys(event)"
+               >
+            <div id="suggestions"
+               class="suggestion-box">
+            </div>
+         </div>
+         <h3>
+            Recorded Symptoms
+         </h3>
+         <div id="tags"
+            class="symptom-list">
+         </div>
+         <div class="button-group">
+            <button class="clear-btn"
+               onclick="clearSymptoms()">
+            Clear Symptoms
+            </button>
+            <button class="generate-btn"
+               onclick="runPrediction()">
+            Generate Medical Report
+            </button>
+         </div>
+      </section>
+      <section id="medicalReport"
+         class="report-container">
+         <div class="report-header">
+            <h2>
+               Disease Prediction Report
+            </h2>
+            <div class="report-meta">
+               <p>
+                  Report ID:
+                  <span id="reportId">
+                  Pending
+                  </span>
+               </p>
+               <p>
+                  Generated:
+                  <span id="reportDate">
+                  Pending
+                  </span>
+               </p>
+               <p>
+                  Model:
+                  Random Forest Classifier
+               </p>
+            </div>
+         </div>
+         <div id="emptyReport"
+            class="empty-report">
+            <h2>
+               🩺 Awaiting Patient Analysis
+            </h2>
+            <p>
+               Enter symptoms and generate
+               a clinical report.
+            </p>
+         </div>
+         <div id="reportContent"
+            class="hidden">
+            <div class="report-section">
+               <h3>
+                  Patient Symptom Record
+               </h3>
+               <div id="symptomSummary">
+               </div>
+            </div>
+            <div class="report-section">
+               <h3>
+                  AI Diagnostic Assessment
+               </h3>
+               <div id="primaryDiagnosis">
+               </div>
+            </div>
+            <div class="report-section">
+               <h3>
+                  Differential Diagnosis
+               </h3>
+               <div id="table">
+               </div>
+            </div>
+            <div class="report-section">
+               <h3>
+                  Diagnostic Confidence Analysis
+               </h3>
+               <div id="confidenceChart">
+               </div>
+            </div>
+            <div class="report-section">
+               <h3>
+                  More Information
+               </h3>
+               <div id="medicalDetails">
+                  Select symptoms and generate
+                  a report to view disease information.
+               </div>
+            </div>
+            <div class="disclaimer">
+               <strong>
+               Disclaimer:
+               </strong>
+               This AI generated report is designed
+               for educational and research purposes
+               only. It should not be considered a
+               professional medical diagnosis and
+               must not replace consultation with
+               qualified healthcare professionals.
+            </div>
+         </div>
+      </section>
+      <section class="download-area">
+         <button id="printReport" class="download-btn">
+         Print / Save Medical Report PDF
+         </button>
+      </section>
+      <script>
+         const ALL_SYMPTOMS =
+             {{ symptoms | tojson }};
+
+      </script>
+
+      <footer class="project-footer">
+
+    <h3>
+        Disease-Prediction Repository
+    </h3>
+
+    <p>
+        This project is open source and available on GitHub.
+    </p>
+
+    <a
+        href="https://github.com/Lightning-President-9/Disease-Prediction"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        🔗 View Source Code on GitHub
+
+    </a>
+
+</footer>
+      <script src="{{ url_for('static', filename='script.js') }}"></script>
+   </body>
+</html>

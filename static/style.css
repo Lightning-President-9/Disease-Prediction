@@ -1,0 +1,453 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --medical-blue: #005f73;
+  --medical-green: #0a9396;
+  --medical-light: #e9f5f5;
+
+  --danger: #c1121f;
+  --warning: #ee9b00;
+  --success: #2a9d8f;
+
+  --text: #1f2937;
+  --text-light: #64748b;
+
+  --border: #d1d5db;
+  --background: #f5f7fa;
+  --paper: #ffffff;
+
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+  --radius: 14px;
+}
+
+body {
+  background: var(--background);
+
+  color: var(--text);
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  line-height: 1.6;
+
+  padding: 30px;
+}
+
+.hospital-header {
+  background: var(--medical-blue);
+
+  color: white;
+
+  padding: 25px 35px;
+
+  border-radius: var(--radius);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+
+  box-shadow: var(--shadow);
+}
+
+.logo {
+  font-size: 3rem;
+}
+
+.hospital-header h1 {
+  font-size: 2rem;
+
+  font-weight: 700;
+}
+
+.hospital-header p {
+  opacity: 0.9;
+}
+
+.patient-card,
+.report-container,
+.download-area {
+  background: var(--paper);
+
+  border-radius: var(--radius);
+
+  padding: 25px;
+
+  margin-bottom: 25px;
+
+  box-shadow: var(--shadow);
+}
+
+.patient-card h2,
+.report-section h3 {
+  color: var(--medical-blue);
+
+  margin-bottom: 15px;
+}
+
+.input-group {
+  position: relative;
+
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+
+  padding: 14px;
+
+  font-size: 1rem;
+
+  border-radius: 10px;
+
+  border: 1px solid var(--border);
+
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: var(--medical-green);
+
+  box-shadow: 0 0 0 3px rgba(10, 147, 150, 0.2);
+}
+
+.suggestion-box {
+  position: absolute;
+
+  width: 100%;
+
+  background: white;
+
+  border: 1px solid var(--border);
+
+  border-radius: 10px;
+
+  max-height: 220px;
+
+  overflow-y: auto;
+
+  z-index: 100;
+}
+
+.suggestion {
+  padding: 12px;
+
+  cursor: pointer;
+
+  border-bottom: 1px solid #eee;
+}
+
+.suggestion:hover,
+.suggestion.active {
+  background: var(--medical-light);
+}
+
+.symptom-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin: 15px 0 25px;
+}
+
+.tag {
+  background: var(--medical-light);
+
+  color: var(--medical-blue);
+
+  padding: 8px 14px;
+
+  border-radius: 25px;
+
+  font-weight: 600;
+}
+
+.tag span {
+  margin-left: 10px;
+
+  cursor: pointer;
+
+  color: var(--danger);
+}
+
+.button-group {
+  display: flex;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.generate-btn {
+  background: var(--medical-green);
+
+  color: white;
+
+  padding: 14px 22px;
+
+  border-radius: 10px;
+
+  font-size: 1rem;
+}
+
+.clear-btn {
+  background: #e5e7eb;
+
+  color: #111827;
+
+  padding: 14px 22px;
+
+  border-radius: 10px;
+}
+
+.download-btn {
+  background: var(--medical-blue);
+
+  color: white;
+
+  padding: 14px 25px;
+
+  border-radius: 10px;
+
+  font-size: 1rem;
+}
+
+button:hover {
+  transform: translateY(-2px);
+
+  opacity: 0.9;
+}
+
+.report-header {
+  border-bottom: 3px solid var(--medical-green);
+
+  padding-bottom: 15px;
+
+  margin-bottom: 25px;
+}
+
+.report-header h2 {
+  color: var(--medical-blue);
+}
+
+.report-meta {
+  margin-top: 12px;
+
+  color: var(--text-light);
+}
+
+.report-section {
+  margin-bottom: 30px;
+}
+
+.report-section h3 {
+  border-left: 5px solid var(--medical-green);
+
+  padding-left: 12px;
+}
+
+.primary-result {
+  background: var(--medical-light);
+
+  border-left: 5px solid var(--medical-green);
+
+  padding: 18px;
+
+  border-radius: 10px;
+}
+
+.disease-name {
+  font-size: 1.5rem;
+
+  color: var(--medical-blue);
+
+  font-weight: 700;
+}
+
+.data-table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+.data-table th {
+  background: var(--medical-blue);
+
+  color: white;
+
+  padding: 12px;
+}
+
+.data-table td {
+  border: 1px solid var(--border);
+
+  padding: 12px;
+}
+
+.data-table tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.medical-section {
+  margin-bottom: 12px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 8px;
+
+  overflow: hidden;
+}
+
+.medical-section summary {
+  padding: 14px;
+
+  cursor: pointer;
+
+  background: var(--medical-light);
+
+  font-weight: 600;
+}
+
+.medical-section p {
+  padding: 15px;
+}
+
+.disclaimer {
+  background: #fff3cd;
+
+  border-left: 5px solid var(--warning);
+
+  padding: 18px;
+
+  border-radius: 8px;
+
+  color: #7c5700;
+
+  margin-top: 25px;
+}
+
+.empty-report {
+  text-align: center;
+
+  padding: 40px;
+
+  color: var(--text-light);
+}
+
+.download-area {
+  text-align: center;
+}
+
+.project-footer {
+    background: white;
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.project-footer h3 {
+    color: var(--medical-blue);
+    margin-bottom: 8px;
+}
+
+.project-footer p {
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.project-footer a {
+    color: var(--medical-green);
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.project-footer a:hover {
+    color: var(--medical-blue);
+    text-decoration: underline;
+}
+
+@media print {
+  body {
+    background: white;
+    padding: 0;
+    margin: 0;
+  }
+
+  .patient-card,
+  .download-area {
+    display: none;
+  }
+
+  .report-container {
+    box-shadow: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .report-section {
+    page-break-inside: avoid;
+  }
+
+  .data-table {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  .hospital-header {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .data-table {
+    font-size: 0.9rem;
+  }
+}

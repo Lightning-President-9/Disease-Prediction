@@ -1,0 +1,10 @@
+Flask
+numpy
+joblib
+python-dotenv
+plotly
+pandas
+flask-limiter
+scikit-learn
+redis
+gunicorn
