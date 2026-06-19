@@ -1,6 +1,6 @@
 # Disease-Prediction
 
-Disease Prediction is application that predicts possible diseases based on patient symptoms using a Machine Learning model. The system generates a professional medical-style diagnostic report containing AI predictions, confidence analysis, and detailed meta knowledge.
+Disease Prediction is an application that predicts possible diseases based on patient symptoms using a Machine Learning model. The system generates a professional medical-style diagnostic report containing AI predictions, confidence analysis, and detailed meta knowledge.
 
 > ⚠ **Disclaimer:** This project is developed for educational and research purposes only. It is not intended to replace professional medical advice, diagnosis, or treatment.
 
